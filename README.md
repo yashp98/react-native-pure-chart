@@ -1,47 +1,51 @@
 # React Native Pure Chart
+
 [![NPM Version](https://img.shields.io/npm/v/react-native-pure-chart.svg?style=flat)](https://www.npmjs.org/package/react-native-pure-chart)
 [![npm](https://img.shields.io/npm/dm/react-native-pure-chart.svg?style=flat)](https://www.npmjs.org/package/react-native-pure-chart)
 [![License](http://img.shields.io/npm/l/react-native-pure-chart.svg?style=flat)](https://raw.githubusercontent.com/somonus/react-native-pure-chart/master/LICENSE.md)
 
 Pure react native chart library that not using svg or ART but only using `react-native` components.<br/>(You don't have to import drawing library with `react-native link` or add `ART` to your project!)
 <br/>
+
 ## Demo
 
 - **LineChart**
-![alt tag](https://raw.githubusercontent.com/oksktank/react-native-pure-chart/master/examples/line.jpeg)
+  ![alt tag](https://raw.githubusercontent.com/oksktank/react-native-pure-chart/master/examples/line.jpeg)
 
 - **LineChart (Multi series)**
-![alt tag](https://raw.githubusercontent.com/oksktank/react-native-pure-chart/master/examples/multiseries_line.jpeg)
+  ![alt tag](https://raw.githubusercontent.com/oksktank/react-native-pure-chart/master/examples/multiseries_line.jpeg)
 
 - **BarChart**
-![alt tag](https://raw.githubusercontent.com/oksktank/react-native-pure-chart/master/examples/bar.jpeg)
+  ![alt tag](https://raw.githubusercontent.com/oksktank/react-native-pure-chart/master/examples/bar.jpeg)
 
 - **BarChart (Multi series)**
-![alt tag](https://raw.githubusercontent.com/oksktank/react-native-pure-chart/master/examples/multiseries_bar.jpeg)
+  ![alt tag](https://raw.githubusercontent.com/oksktank/react-native-pure-chart/master/examples/multiseries_bar.jpeg)
 
 - **PieChart (Beta)**<br/>
-![alt tag](https://raw.githubusercontent.com/oksktank/react-native-pure-chart/master/examples/pie.jpg)
+  ![alt tag](https://raw.githubusercontent.com/oksktank/react-native-pure-chart/master/examples/pie.jpg)
 
 ## Installation
 
-
-
 ```bash
-yarn add react-native-pure-chart
+yarn add custom-react-native-pure-chart
 ```
 
 Alternatively with npm:
+
 ```bash
-npm install react-native-pure-chart --save
+npm install custom-react-native-pure-chart --save
 ```
+
 ## Required
+
 ```js
-import PureChart from 'react-native-pure-chart';
+import PureChart from "custom-react-native-pure-chart";
 ```
 
 ## Usage
 
 #### Single Series: Simple
+
 ```js
 render(
   ...
@@ -50,7 +54,6 @@ render(
   ...
 );
 ```
-
 
 #### Single Series: with labels
 
@@ -68,7 +71,9 @@ render(
   ...
 );
 ```
+
 #### Multi Series: Simple
+
 ```js
 render(
   ...
@@ -82,7 +87,9 @@ render(
   ...
 );
 ```
+
 #### Multi Series: with labels
+
 ```js
 render(
   ...
@@ -114,7 +121,9 @@ render(
   ...
 );
 ```
+
 #### Pie chart
+
 ```js
 render(
   ...
@@ -142,24 +151,29 @@ render(
 ### Props
 
 ##### `type`: string
+
 type of chart. ['line' | 'bar' | 'pie'] is now available
 
 ##### `height`: number
+
 height of chart
 
 ##### `data`: array
-data for chart 
-```js 
-  var data = [30, 200, 170, 250, 10] 
+
+data for chart
+
+```js
+  var data = [30, 200, 170, 250, 10]
   var dataWithLabel = [
-    {x: '2017-10-01', y: 30}, 
-    {x: '2017-10-02', y: 200}, 
-    {x: '2017-10-03', y: 170} ... 
+    {x: '2017-10-01', y: 30},
+    {x: '2017-10-02', y: 200},
+    {x: '2017-10-03', y: 170} ...
   ]
 ```
 
-multi series data for chart 
-```js 
+multi series data for chart
+
+```js
   var data = [
     {seriesName: 'series1', data: [30, 200, 170, 250, 10], color: '#297AB1'},
     {seriesName: 'series2', data: [40, 250, 110, 290, 14], color: 'blue'}
@@ -168,35 +182,38 @@ multi series data for chart
     {
       seriesName: 'series1',
       data:[
-        {x: '2017-10-01', y: 30}, 
-        {x: '2017-10-02', y: 200}, 
+        {x: '2017-10-01', y: 30},
+        {x: '2017-10-02', y: 200},
         {x: '2017-10-03', y: 170} ...
       ],
       color: '#297AB1'
     },
-    .... 
+    ....
   ]
 ```
 
 ##### `customValueRenderer`: func
+
 add custom value on the point
+
 ```js
-  <PureChart type={'line'}
-    data={data}
-    width={'100%'}
-    height={200}
-    customValueRenderer={(index, point) => {
-      if (index % 2 === 0) return null
-      return (
-        <Text style={{textAlign: 'center'}}>{point.y}</Text>
-      )
-    }}/>
+<PureChart
+  type={"line"}
+  data={data}
+  width={"100%"}
+  height={200}
+  customValueRenderer={(index, point) => {
+    if (index % 2 === 0) return null;
+    return <Text style={{ textAlign: "center" }}>{point.y}</Text>;
+  }}
+/>
 ```
+
 ![alt tag](https://raw.githubusercontent.com/oksktank/react-native-pure-chart/master/examples/customValueRenderer.png)
 
 ##### `numberOfYAxisGuideLine`: number
-set number of Y Axis guide line
 
+set number of Y Axis guide line
 
 <!--
 ##### `defaultBorderColor`: number
@@ -207,20 +224,21 @@ set line thickness in line chart
 
 ##### `yAxisSymbol`: string
 set symbol next to y-guide-value
-e.g. 500$, 40% 
+e.g. 500$, 40%
 
 ##### `showXAxisLabel/showYAxisLabel`: bool
 option to display X-axis-label/y-axis-label
 
 ##### `initialScrollPosition / initialScrollTimeOut`: {x:number, y:number, animated:bool} / number
-set initial scroll position in line&bar chart.  
+set initial scroll position in line&bar chart.
 -->
 
 ## Contributing
 
 Contributions are welcome. Any kind of contribution, such as writing a documentation, bug fix, or solving issues are helpful.
 
-The `master` branch of this repository contains the latest stable release of *react-native-pure-chart*. In general, pull requests should be submitted from a separate branch starting from the `develop` branch. 
+The `master` branch of this repository contains the latest stable release of _react-native-pure-chart_. In general, pull requests should be submitted from a separate branch starting from the `develop` branch.
 
 ## License
+
 MIT
