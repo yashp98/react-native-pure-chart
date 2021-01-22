@@ -136,7 +136,9 @@ class LineChart extends React.Component {
 
             let emptyCount = 0
             this.state.sortedData.map((series) => {
-              if (series.data[selectedIndex].isEmpty) emptyCount++
+              if (series.data[selectedIndex] && series.data[selectedIndex].isEmpty) {
+                emptyCount++;
+              }
             })
             if (emptyCount === this.state.sortedData.length) {
               return null

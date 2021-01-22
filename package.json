@@ -1,6 +1,6 @@
 {
   "name": "custom-react-native-pure-chart",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "[![NPM Version](https://img.shields.io/npm/v/react-native-pure-chart.svg?style=flat)](https://www.npmjs.org/package/react-native-pure-chart) [![npm](https://img.shields.io/npm/dm/react-native-pure-chart.svg?style=flat)](https://www.npmjs.org/package/react-native-pure-chart) [![License](http://img.shields.io/npm/l/react-native-pure-chart.svg?style=flat)](https://raw.githubusercontent.com/somonus/react-native-pure-chart/master/LICENSE.md)",
   "devDependencies": {
     "jest-expo": "~20.0.0",
